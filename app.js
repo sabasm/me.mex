@@ -11,9 +11,9 @@ const path         = require('path');
 
 
 mongoose
-  .connect('mongodb://localhost/memex', {useNewUrlParser: true})
+  .connect(process.env.DB, {useNewUrlParser: true})
   .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
+    console.log(`Connectado a MLAB memex DB`)
   })
   .catch(err => {
     console.error('Error connecting to mongo', err)
