@@ -14,6 +14,7 @@ const passportSetup = require('./helpers/passport')
 //important stuff ^^^^^^^^
 
 const passport = require('passport')
+const cookieSession = require('cookie-session')
 
 const app = express();
 
@@ -33,7 +34,10 @@ app.use(require('node-sass-middleware')({
 }));
 
 //COOKIES
-
+app.use(cookieSession({
+  maxAge: 24*60*60*1000,
+  keys: [process.env.cookeyKey]
+}))
 
 //initialize passport
 app.use(passport.initialize())
@@ -43,7 +47,7 @@ app.use(passport.session())
 //set up routes
 const auth = require('./routes/auth')
 const index = require('./routes/index');
-
+const perfil = require('./routes/perfil')
 //conect to mongoose
 mongoose
   .connect(process.env.DB, {
@@ -94,7 +98,8 @@ app.get('/auth/facebook/callback',
     // Successful authentication, redirect home.
     res.redirect('/');
   });
-  
+
+app.use('/perfil', perfil)
 app.use('/auth', auth)
 app.use('/', index);
 

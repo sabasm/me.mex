@@ -3,6 +3,7 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy= require('passport-facebook').Strategy;
 const User = require('../models/user');
 
+//SERIALIZE and DESERIALIZE for COOKIES SESSION
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
@@ -12,7 +13,9 @@ passport.deserializeUser((id, done) => {
         done(null, user);
     });
 });
+//STRATEGIES
 
+//----------GOOGLE+
 passport.use(
     new GoogleStrategy({
         // options for google strategy
@@ -40,10 +43,11 @@ passport.use(
     })
 );
 
+//-----------FACEBOOK
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEAPPID,
     clientSecret: process.env.FACEAPPKEY,
-    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    callbackURL: "/auth/facebook/callback",
     profileFields: ['id', 'displayName', 'photos', 'email']
   },
   function(accessToken, refreshToken, profile, done) {
