@@ -77,16 +77,14 @@ app.locals.title = 'MemeCanales#';
 
 //AUTHS
 //------GOOGLE+
-app.get('/auth/google', passport.authenticate('google', {
-  scope: 'https://www.google.com/m8/feeds'
-}))
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile'] }));
 
-app.get('/auth/google/callback',
-  passport.authenticate('google', {
-    failureRedirect: '/login'
-  }),
-  function (req, res) {
-    res.redirect('/');
+app.get('/auth/google/redirect', 
+  passport.authenticate('google', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/perfil');
   });
 //------FACEBOOK
 app.get('/auth/facebook',
@@ -96,7 +94,7 @@ app.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/login' }),
   function(req, res) {
     // Successful authentication, redirect home.
-    res.redirect('/');
+    res.redirect('/perfil');
   });
 
 app.use('/perfil', perfil)
