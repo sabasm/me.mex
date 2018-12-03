@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{title}}</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
+  
   <link rel="stylesheet" href="/stylesheets/style.css" />
+  
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
@@ -20,11 +24,12 @@
       <i class="fas fa-search"></i>
     </div>
   </nav>
-  <div>
-      DEV LINKS: <a href="/home">HOME</a><a href="/trending">TRENDING</a><a href="">HOME</a>
-  </div>
+  
   <div class="bodyHbs">
     {{{body}}}
+  </div>
+  <div>
+      DEV LINKS: <a href="/home">HOME</a><a href="/trending">TRENDING</a><a href="">HOME</a>
   </div>
   <div class="icons">
    <div class="items"><a href="#"><i class="fas fa-home"></i></div></a>
@@ -33,6 +38,9 @@
    <div class="items"><a href="#"><i class="fas fa-fire"></i></div></a>
    <div class="items"><a href="#"><i class="fas fa-user-circle"></i></div></a>
   </div>
+  <!-- UIkit JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
   <script src="/javascripts/script.js"></script>
 </body>
 </html>
