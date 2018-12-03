@@ -98,8 +98,8 @@ app.get('/auth/facebook/callback',
 app.use('/auth', auth)
 app.use('/', index);
 
-app.listen(3000, () => {
-  console.log('Escuchando port 3000')
-})
+// app.listen(3000, () => {
+//   console.log('Escuchando port 3000')
+// })
 
 module.exports = app;
