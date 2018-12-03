@@ -71,6 +71,8 @@ app.use(bodyParser.urlencoded({
 // default value for title local
 app.locals.title = 'MemeCanales#';
 
+//AUTHS
+//------GOOGLE+
 app.get('/auth/google', passport.authenticate('google', {
   scope: 'https://www.google.com/m8/feeds'
 }))
@@ -82,7 +84,17 @@ app.get('/auth/google/callback',
   function (req, res) {
     res.redirect('/');
   });
+//------FACEBOOK
+app.get('/auth/facebook',
+  passport.authenticate('facebook'));
 
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
+  
 app.use('/auth', auth)
 app.use('/', index);
 

@@ -12,6 +12,8 @@ router.get('/logout',(req,res,next)=>{
     req.logout()
     res.redirect('/')
 })
+
+
 //auth with google
 
 router.get('/google', passport.authenticate('google',{
@@ -26,4 +28,15 @@ router.get('/google/redirect',passport.authenticate('google'),(req,res,next)=>{
     //res.send(req.user)
     res.redirect('/profile/')
 })
+
+//auth with facebook
+router.get('/facebook',passport.authenticate('facebook', { scope: ['id', 'displayName', 'photos', 'email'] }),(req,res,next)=>{
+    console.log('loggin with Facebook...')
+})
+
+//callback route for facebook
+router.get('/facebook/redirect',passport.authenticate('facebook'),(req,res,next)=>{
+    res.send(req.user)
+})
+
 module.exports= router

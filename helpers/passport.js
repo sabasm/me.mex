@@ -1,5 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const FacebookStrategy= require('passport-facebook').Strategy;
 const User = require('../models/user');
 
 passport.serializeUser((user, done) => {
@@ -39,3 +40,30 @@ passport.use(
     })
 );
 
+passport.use(new FacebookStrategy({
+    clientID: process.env.FACEAPPID,
+    clientSecret: process.env.FACEAPPKEY,
+    callbackURL: "http://localhost:3000/auth/facebook/callback",
+    profileFields: ['id', 'displayName', 'photos', 'email']
+  },
+  function(accessToken, refreshToken, profile, done) {
+    // check if user already exists in our own db
+    console.log(User)
+    User.findOne({facebookId: profile.id}).then((currentUser) => {
+        if(currentUser){
+            // already have this user
+            console.log('user is: ', currentUser);
+            done(null, currentUser);
+        } else {
+            // if not, create user in our db
+            new User({
+                facebookId: profile.id,
+                username: profile.displayName
+            }).save().then((newUser) => {
+                console.log('created new user: ', newUser);
+                done(null, newUser);
+            });
+        }
+    });
+  }
+));
