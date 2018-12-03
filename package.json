@@ -1,0 +1,35 @@
+{
+  "name": "memex",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "DEBUG=memex:* nodemon ./bin/www",
+    "dev-windows": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cloudinary": "^1.13.2",
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "hbs": "^4.0.1",
+    "heroku": "^7.18.10",
+    "mongoose": "^5.2.10",
+    "morgan": "^1.9.0",
+    "node-sass-middleware": "^0.11.0",
+    "passport": "^0.4.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "main": "index.js",
+  "keywords": [
+    "memex"
+  ],
+  "author": "Sabás Mendívil, Gerard Jimenez",
+  "license": "ISC",
+  "description": ""
+}
