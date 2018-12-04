@@ -1,12 +1,10 @@
 body {
   padding: 0px;
   margin: 0;
-  font: 14px "Roboto", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Roboto", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF;
-}
+  color: #00B7FF; }
 
 .navLayout {
   width: 100vw;
@@ -16,43 +14,35 @@ a {
   padding: 2em 0;
   position: fixed;
   top: 0;
-  background-color: #fff;
-}
+  background-color: #fff; }
 
 .left-items {
   display: inherit;
   align-items: center;
   margin-left: 2em;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .right-items {
-  margin-right: 2em;
-}
+  margin-right: 2em; }
 
 .logo {
-  margin: 0 10px;
-}
+  margin: 0 10px; }
 
 .bodyHbs {
   margin-top: 72px;
   padding: 0 2em;
-  height: calc(100vh - 118px);
-}
+  height: calc(100vh - 118px); }
 
 .icons {
-  bottom: 0;
-}
+  bottom: 0; }
 
 .items {
   width: 20%;
   float: left;
-  text-align: center;
-}
+  text-align: center; }
 
 .items i {
-  font-size: 2em;
-}
+  font-size: 2em; }
 
 .sidenav {
   height: 100%;
@@ -64,8 +54,7 @@ a {
   background-color: #00b6ff;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
-}
+  padding-top: 60px; }
 
 .sidenav a {
   padding: 8px 8px 8px 32px;
@@ -73,34 +62,27 @@ a {
   font-size: 25px;
   color: white;
   display: block;
-  transition: 0.3s;
-}
+  transition: 0.3s; }
 
 .sidenav a:hover {
-  color: #f1f1f1;
-}
+  color: #f1f1f1; }
 
 .sidenav .closebtn {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
-  margin-left: 50px;
-}
+  margin-left: 50px; }
 
 #main {
-  transition: margin-left 0.5s;
-}
+  transition: margin-left 0.5s; }
 
 @media screen and (max-height: 450px) {
   .sidenav {
-    padding-top: 15px;
-  }
-
+    padding-top: 15px; }
   .sidenav a {
-    font-size: 18px;
-  }
-}
+    font-size: 18px; } }
+
 #cover {
   width: 100vw;
   height: 100vh;
@@ -108,7 +90,13 @@ a {
   opacity: 0;
   z-index: -1;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-}
+  background-color: rgba(0, 0, 0, 0.5); }
+
+.uk-search-default .uk-search-input {
+  height: 20px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background: 0 0;
+  border: 0px solid #e5e5e5; }
 
 /*# sourceMappingURL=style.css.map */
