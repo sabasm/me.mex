@@ -81,15 +81,15 @@ app.locals.title = 'MemeCanales#';
 //AUTHS
 
 //-------LOCAL-DB
-app.get('/auth/signup',function(req, res,next) {
-    res.render('auth/signup');
-  });
+// app.get('/auth/signup',function(req, res,next) {
+//     res.render('auth/signup');
+//   });
 
-app.post('/auth/signup', 
-  passport.authenticate('local', { failureRedirect: '/auth/login' }),
-  function(req, res) {
-    res.redirect('/perfil');
-  });
+// app.post('/auth/signup', 
+//   passport.authenticate('local', { failureRedirect: '/auth/login' }),
+//   function(req, res) {
+//     res.redirect('/perfil');
+//   });
 
 //------GOOGLE+
 app.get('/auth/google',

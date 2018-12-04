@@ -26,6 +26,19 @@ router.get('/logout', (req, res, next) => {
 //   res.redirect('/profile');
 // });
 
+//forgoten routes
+router.get('/semefue',(req,res,next)=>{
+	res.render('auth/forgoten')
+})
+router.post('/semefue',(req,res,next)=>{
+	data = req.body.forgotenUser
+
+			if (User.findOne(data)) {
+			res.flash("'" + e + "' ya está tomado")
+			}
+
+	res.render('auth/forgoten')
+})
 
 // signup routes
 router.get(`/signup`, (req, res) => res.render(`auth/signup`))
@@ -44,13 +57,13 @@ router.post(`/signup`,(req, res)=> {
 			// if (User.findOne(email)) {
 			// 	res.flash("'" + e + "' ya está utilizado, olvidaste tu contraseña?")
 			// }else{
-				User.register({
-					username,
-					email,
-					password
-				}).then(
-					res.render('/perfil')
+				User.register(req.body, req.body.password
+				).then(
+					
+					// res.render('/perfil')
+					res.send('Listo putita')
 				)
+				.catch(e=>console.log(e))
 			// }
 		})
 
