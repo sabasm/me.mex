@@ -37,7 +37,7 @@ a {
 .bodyHbs {
   margin-top: 72px;
   padding: 0 2em;
-  height: calc(100vh - 118px);
+  height: calc(100vh - 130px);
 }
 
 .icons {
@@ -117,5 +117,13 @@ a {
   padding-left: 6px;
   padding-right: 6px;
   background: 0 0;
-  border: 0px solid #e5e5e5;
+  border: 1px solid #e5e5e5;
+  padding: 1em;
+  border-radius: 50px;
 }
+
+.fade{
+  transition: opacity 350ms ease-in-out;
+  
+}
+
