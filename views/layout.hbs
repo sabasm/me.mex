@@ -13,30 +13,38 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
 <body>
-  <nav class="navLayout">
-    <div class="left-items">
-      <a href="/"><i class="fas fa-bars"></i></a>
-      <p class="logo">
-        ME.MEX
-      </p>
-    </div>
-    <div class="right-items">
-      <i class="fas fa-search"></i>
-    </div>
-  </nav>
-  
-  <div class="bodyHbs">
-    {{{body}}}
+  <div id="mySidenav" class="sidenav">
+    <a class="closebtn" id="toggleClose">&times;</a>
+    <a href="#"><i class="fas fa-home"></i> Inicio</a>
+    <a href="#"><i class="fas fa-user-circle"></i> Perfil</a>
+    <a href="#"><i class="fas fa-bolt"></i>&nbsp; Trending</a>
   </div>
-  <div>
-      DEV LINKS: <a href="/">HOME</a><a href="/trending">TRENDING</a><a href="/auth/login">LOGIN</a><a href="/auth/logout">LOGOUT</a><a href="/perfil">PERFIL</a>
-  </div>
-  <div class="icons">
-   <div class="items"><a href="#"><i class="fas fa-home"></i></div></a>
-   <div class="items"><a href="#"><i class="fas fa-bolt"></i></div></a>
-   <div class="items"><a href="#"><i class="fas fa-plus"></i></div></a>
-   <div class="items"><a href="#"><i class="fas fa-fire"></i></div></a>
-   <div class="items"><a href="#"><i class="fas fa-user-circle"></i></div></a>
+  <div id="main">
+    <nav class="navLayout">
+      <div class="left-items">
+      <i id="toggleOpen" class="fas fa-bars"></i>
+        <p class="logo">
+          ME.MEX
+        </p>
+      </div>
+      <div class="right-items">
+        <i class="fas fa-search"></i>
+      </div>
+    </nav>
+    
+    <div class="bodyHbs">
+      {{{body}}}
+    </div>
+    <div>
+        DEV LINKS: <a href="/">HOME</a><a href="/trending">TRENDING</a><a href="/auth/login">LOGIN</a><a href="/auth/logout">LOGOUT</a><a href="/perfil">PERFIL</a>
+    </div>
+    <div class="icons">
+    <div class="items"><a href="#"><i class="fas fa-home"></i></div></a>
+    <div class="items"><a href="#"><i class="fas fa-bolt"></i></div></a>
+    <div class="items"><a href="#"><i class="fas fa-plus"></i></div></a>
+    <div class="items"><a href="#"><i class="fas fa-fire"></i></div></a>
+    <div class="items"><a href="#"><i class="fas fa-user-circle"></i></div></a>
+    </div>
   </div>
   <!-- UIkit JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>

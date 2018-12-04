@@ -1,5 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.getElementById('toggleOpen').addEventListener('click', function(){
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.opacity = "1";
+    document.getElementById("main").style.marginLeft = "250px";
 
-  console.log('IronGenerator JS imported successfully!');
+})
 
-}, false);
+
+document.getElementById('toggleClose').addEventListener('click', function(){
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("mySidenav").style.opacity = "0";
+    document.getElementById("main").style.marginLeft= "0";
+})
