@@ -48,6 +48,9 @@ app.use(passport.session())
 const auth = require('./routes/auth')
 const index = require('./routes/index');
 const perfil = require('./routes/perfil')
+const trending=require('./routes/trending')
+const tuscanales=require('./routes/tuscanales')
+
 //conect to mongoose
 mongoose
   .connect(process.env.DB, {
@@ -109,6 +112,9 @@ app.get('/auth/facebook/callback',
     res.redirect('/perfil');
   });
 
+
+  app.use('/tuscanales', tuscanales)
+app.use('/trending', trending)
 app.use('/perfil', perfil)
 app.use('/auth', auth)
 app.use('/', index);
