@@ -15,7 +15,7 @@ router.get('/logout',(req,res,next)=>{
 
 
 //auth LOCAL
-// passport.use(new LocalStrategy(
+// passport.use(new LocalStrategy(©
 //     function(username, password, done) {
 //       User.findOne({ username: username }, function (err, user) {
 //         if (err) { return done(err); }
