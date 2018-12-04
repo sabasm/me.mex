@@ -1,3 +1,4 @@
+require('dotenv').config();
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy= require('passport-facebook').Strategy;
@@ -22,7 +23,7 @@ passport.use(
         clientID: process.env.GOOGCLIENTID,
         clientSecret: process.env.GOOGCLIENTSECRET,
         callbackURL: '/auth/google/redirect'
-    }, (accessToken, refreshToken, profile, done) => {
+    }, (Token, secretToken, profile, done) => {
         // check if user already exists in our own db
         User.findOne({googleId: profile.id}).then((currentUser) => {
             if(currentUser){
