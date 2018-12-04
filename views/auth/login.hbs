@@ -1,10 +1,20 @@
         <header>
-            <h1>Login using...</h1>
+            <h1>Ingresa!</h1>
         </header>
         <main>
-            <a class="google-btn" href="/auth/google">Google+</a><br>
+            <form action="/auth/login" method="POST">
+            <label><p>Correo:<br>
+                <input type="text" name="email" placeholder="memes@longcats.com"></p></label>
+                <label><p>Contraseña:<br>
+                <input type="password" name="password" placeholder="DogLover49"></p></label>
+                <input type="submit" text="Iniciar Sesión"><br><br>
+                <label>o bien</label>
+            </form>
+            <br>
+
             <a class="facebook-btn" href="/auth/facebook">Facebook</a><br>
-            <a class="email-btn" href="/auth/signup">Email</a><br>
+            <a class="google-btn" href="/auth/google">Google+</a><br>
+            <a class="email-btn" href="/auth/signup">Regístrate</a><br>
             <p><small><a href="/trending">luego ;)</a></small></p>
             <small>Por precauciones legales teneeeeeemos que advertir que este sitio utiliza cookies, pero no te preocupes, son iguales de inofensivas como una papa...</small>
         <p><small>aquí irá una foto de una papa + ">" + una foto de una galleta</small></p>
