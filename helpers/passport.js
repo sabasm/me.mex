@@ -5,7 +5,8 @@ const FacebookStrategy= require('passport-facebook').Strategy;
 const LocalStrategy=require('passport-local')
 const User = require('../models/user');
 
-//SERIALIZE and DESERIALIZE for COOKIES SESSION
+
+//SERIALIZE and DESERIALIZE for COOKIES SESSION 3rd party
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
@@ -15,6 +16,13 @@ passport.deserializeUser((id, done) => {
         done(null, user);
     });
 });
+//SERIALIZE and DESERIALIZE for COOKIES SESSION LOCAL
+// -> Passport strategy based on User model with plugin (local-mongoose)
+passport.use(new LocalStrategy(User.authenticate()))
+// -> Serialize and deserialize User in session
+passport.serializeUser(User.serializeUser())
+passport.deserializeUser(User.deserializeUser())
+
 //STRATEGIES
 //----------LOCAL
 passport.use(new LocalStrategy(
