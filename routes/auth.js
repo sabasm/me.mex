@@ -15,16 +15,15 @@ router.get('/logout',(req,res,next)=>{
 
 
 //auth LOCAL
-// passport.use(new LocalStrategy(©
-//     function(username, password, done) {
-//       User.findOne({ username: username }, function (err, user) {
-//         if (err) { return done(err); }
-//         if (!user) { return done(null, false); }
-//         if (!user.verifyPassword(password)) { return done(null, false); }
-//         return done(null, user);
-//       });
-//     }
-//   ));
+router.get('/signup', passport.authenticate('local'),(req,res,next)=>{
+    res.render('auth/signup')
+})
+
+router.post('/login', 
+passport.authenticate('local', { failureRedirect: '/login' }),
+function(req, res) {
+  res.redirect('/profile');
+});
 
 //auth with google
 

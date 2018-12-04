@@ -82,11 +82,11 @@ app.get('/auth/signup',function(req, res,next) {
     res.render('auth/signup');
   });
 
-// app.post('/login', 
-//   passport.authenticate('local', { failureRedirect: '/login' }),
-//   function(req, res) {
-//     res.redirect('/');
-//   });
+app.post('/auth/signup', 
+  passport.authenticate('local', { failureRedirect: '/auth/login' }),
+  function(req, res) {
+    res.redirect('/perfil');
+  });
 
 //------GOOGLE+
 app.get('/auth/google',

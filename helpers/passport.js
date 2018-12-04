@@ -2,6 +2,7 @@ require('dotenv').config();
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const FacebookStrategy= require('passport-facebook').Strategy;
+const LocalStrategy=require('passport-local')
 const User = require('../models/user');
 
 //SERIALIZE and DESERIALIZE for COOKIES SESSION
@@ -15,6 +16,17 @@ passport.deserializeUser((id, done) => {
     });
 });
 //STRATEGIES
+//----------LOCAL
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+      User.findOne({ username: username }, function (err, user) {
+        if (err) { return done(err); }
+        if (!user) { return done(null, false); }
+        if (!user.verifyPassword(password)) { return done(null, false); }
+        return done(null, user);
+      });
+    }
+  ));
 
 //----------GOOGLE+
 passport.use(
