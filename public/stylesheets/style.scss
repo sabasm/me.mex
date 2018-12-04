@@ -8,7 +8,7 @@ a {
   color: #00B7FF;
 }
 
-.navLayout{
+.navLayout {
   width: 100vw;
   display: flex;
   justify-content: space-between;
@@ -19,36 +19,85 @@ a {
   background-color: #fff;
 }
 
-.left-items{
+.left-items {
   display: inherit;
   align-items: center;
   margin-left: 2em;
+  cursor: pointer;
 }
 
-.right-items{
+.right-items {
   margin-right: 2em;
 }
 
-.logo{
+.logo {
   margin: 0 10px;
 }
 
-.bodyHbs{
+.bodyHbs {
   margin-top: 72px;
   padding: 0 2em;
   height: calc(100vh - 118px);
 }
 
-.icons{
+.icons {
   bottom: 0;
 }
 
-.items{
+.items {
   width: 20%;
   float: left;
   text-align: center;
 }
- .items i{
-  font-size: 2em;
- }
 
+.items i {
+  font-size: 2em;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #00b6ff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left 0.5s;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+}
