@@ -76,6 +76,18 @@ app.use(bodyParser.urlencoded({
 app.locals.title = 'MemeCanales#';
 
 //AUTHS
+
+//-------LOCAL-DB
+app.get('/auth/signup',function(req, res,next) {
+    res.render('auth/signup');
+  });
+
+// app.post('/login', 
+//   passport.authenticate('local', { failureRedirect: '/login' }),
+//   function(req, res) {
+//     res.redirect('/');
+//   });
+
 //------GOOGLE+
 app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile'] }));
