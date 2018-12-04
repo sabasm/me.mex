@@ -30,15 +30,16 @@ router.get('/logout', (req, res, next) => {
 router.get('/semefue',(req,res,next)=>{
 	res.render('auth/forgoten')
 })
-router.post('/semefue',(req,res,next)=>{
-	data = req.body.forgotenUser
 
-			if (User.findOne(data)) {
-			res.flash("'" + e + "' ya está tomado")
-			}
 
-	res.render('auth/forgoten')
-})
+// router.post('/semefue',(req,res,next)=>{
+// 	data = req.body.forgotenUser
+
+// 			// if (User.findOne(username)) {
+// 			// 	res.flash("'" + e + "' ya está tomado")
+// 			// }
+// 	res.render('auth/forgoten')
+// })
 
 // signup routes
 router.get(`/signup`, (req, res) => res.render(`auth/signup`))
