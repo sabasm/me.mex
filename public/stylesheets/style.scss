@@ -126,4 +126,13 @@ a {
   transition: opacity 350ms ease-in-out;
   
 }
-
+#liked{
+  width: 99%;
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+}
+.miniaturas{
+  width: 30%;
+  max-height: 30%;
+}

@@ -3,9 +3,9 @@
 <p><article><span>#️⃣: {{canalesNumber}}</span><span>😂:{{likes}}</span><span>⬆: {{upvotes}}</span></article></p>
 
 <p>gustados y subidos:</p>
-<div class="liked"></div>
+<div id="liked">
   {{#each likedPost}}
-    <img src="{{this}}" alt="somememe">
+    <img class="miniaturas" src="{{this}}" alt="somememe" width="20%">
   {{/each}}
 </div>
 {{!-- username:String,
