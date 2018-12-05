@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-var passportLocalMongoose = require(`passport-local-mongoose`)
+//var passportLocalMongoose = require(`passport-local-mongoose`)
 const Schema = mongoose.Schema
 const userSchema= new Schema({
 username:String,
@@ -18,7 +18,14 @@ likedPost:{
   type:[String],
   default:['https://www.catster.com/wp-content/uploads/2015/06/600px-outer-space-longcat-6ztyxR.jpg','https://i.kym-cdn.com/entries/icons/original/000/024/062/jerry.jpg','https://pbs.twimg.com/profile_images/2370446440/6e2jwf7ztbr5t1yjq4c5_400x400.jpeg']
 }
-})
+},{
+  timestamps:{
+    createdAt:'createdAt',
+    updatedAt:'updatedAt'
+  }
+}
+)
+
 // -> set plugin into UserSchema
 //userSchema.plugin(passportLocalMongoose)
 module.exports = mongoose.model('User',userSchema)

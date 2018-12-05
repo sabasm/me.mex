@@ -10,13 +10,13 @@ res.redirect('/auth/login')
 }
 
 router.get('/',authCheck,(req,res,next)=>{
-  res.render('perfil',req.user)
+  res.render('perfil/perfil',req.user)
 })
 
 //EDITOR DE PERFIL
 
 router.get('/edit',authCheck,(req,res,next)=>{
-  res.render('edit',req.user)
+  res.render('perfil/edit',req.user)
 })
 router.post('/edit',(req,res,next)=>{
   let username = req.body.username
