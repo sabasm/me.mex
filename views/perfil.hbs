@@ -1,1 +1,18 @@
-<h1>Iniciaste sesión {{username}}</h1>
+<h5>{{username}}</h5>
+<p>{{bio}}</p>
+<p><article><span>#️⃣: {{canalesNumber}}</span><span>😂:{{likes}}</span><span>⬆: {{upvotes}}</span></article></p>
+
+<p>gustados y subidos:</p>
+<div class="liked"></div>
+  {{#each likedPost}}
+    <img src="{{this}}" alt="somememe">
+  {{/each}}
+</div>
+{{!-- username:String,
+googleId:String,
+facebookId:String,
+email:String,
+bio:String,
+likedpost:{
+  type:String,
+  photoURL:[String] --}}
