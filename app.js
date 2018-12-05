@@ -44,10 +44,11 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 
-//set up routes
+//-------------------------------------------------------set up routes
 const auth = require('./routes/auth')
 const index = require('./routes/index');
 const perfil = require('./routes/perfil')
+const posting=require('./routes/posting')
 const trending=require('./routes/trending')
 const tuscanales=require('./routes/tuscanales')
 
@@ -112,7 +113,7 @@ app.get('/auth/facebook/callback',
     res.redirect('/perfil');
   });
 
-
+app.use('/post',posting)
 app.use('/tuscanales', tuscanales)
 app.use('/trending', trending)
 app.use('/perfil', perfil)

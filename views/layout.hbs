@@ -46,11 +46,23 @@
                 <small>Por precauciones legales teneeeeeemos que advertir que este sitio utiliza cookies y al estar aquí las aceptas... pero no te preocupes, son iguales de inofensivas como una papa...(Aquí irá una foto de una papa + ">" + una foto de una galleta o una papa/galleta si encontramos)</small>
   </div>
     <div id="footer" class="icons">
-      <a href="/"><i class="fas fa-home"></i></a>
-      <a href="/trending"><i class="fas fa-bolt"></i></a>
-      <a href="/addpost"><i class="fas fa-plus"></i></a>
-      <a href="/tuscanales"><i class="fas fa-fire"></i></a>
-      <a href="/perfil"><i class="fas fa-user-circle"></i></a>
+      <div id="item1" class="items"><a href="/"><i class="fas fa-home"></i></div></a>
+      <div id="item2" class="items"><a href="/trending"><i class="fas fa-bolt"></i></div></a>
+
+      {{!-- here goes the hidden button for directly upload an image for the post button --}}
+      <div id="item3" class="items">
+        <a id="addpost" onclick="loader()" ><i class="fas fa-plus"></i></a>
+          
+        <form action="/post/add" method="POST" enctype="multipart/form-data">
+  
+  
+  <input hidden id="loader" type='file' onchange="readURL(this);" />
+        <input hidden id="submitpost" type="submit" >
+        </i></div>
+
+      {{!-- end of the posting button --}}
+      <div id="item4" class="items"><a href="/tuscanales"><i class="fas fa-fire"></i></div></a>
+      <div id="item5" class="items"><a href="/perfil"><i class="fas fa-user-circle"></i></div></a>
     </div>
 
   <!-- UIkit JS -->
