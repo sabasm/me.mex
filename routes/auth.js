@@ -29,33 +29,33 @@ router.get('/logout', (req, res, next) => {
 // 	res.render('auth/forgoten')
 // })
 
-// signup routes
-router.get(`/signup`, (req, res) => res.render(`auth/signup`))
+// signup routes funciona pero el auth no
+// router.get(`/signup`, (req, res) => res.render(`auth/signup`))
 
-router.post(`/signup`,(req, res)=> {
+// router.post(`/signup`,(req, res)=> {
 
-			username = req.body.username
-			email = req.body.email
-			password = req.password
-			password2 = req.password2
-				User.register(req.body, req.body.password
-				).then(
+// 			username = req.body.username
+// 			email = req.body.email
+// 			password = req.password
+// 			password2 = req.password2
+// 				User.register(req.body, req.body.password
+// 				).then(
 					
-					// res.render('/perfil')
-					res.send('Listo putita')
-				)
-				.catch(e=>console.log(e))
-			// }
-		})
-		
+// 					// res.render('/perfil')
+// 					res.send('Listo putita')
+// 				)
+// 				.catch(e=>console.log(e))
+// 			// }
+// 		})
+// 		git 
 
-			router.post(
-				`/login`,
-				passport.authenticate(`local`, {
-					successRedirect: `/perfil/`,
-					failureRedirect: `/auth/login`
-				})
-			)
+// 			router.post(
+// 				`/login`,
+// 				passport.authenticate(`local`, {
+// 					successRedirect: `/perfil/`,
+// 					failureRedirect: `/auth/login`
+// 				})
+// 			)
 
 
 			//auth with google

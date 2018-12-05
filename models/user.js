@@ -6,8 +6,12 @@ username:String,
 googleId:String,
 facebookId:String,
 email:String,
-password:String
+bio:String,
+likedpost:{
+  type:String,
+  photoURL:[String]
+}
 })
 // -> set plugin into UserSchema
-userSchema.plugin(passportLocalMongoose)
+//userSchema.plugin(passportLocalMongoose)
 module.exports = mongoose.model('User',userSchema)
