@@ -14,31 +14,20 @@ router.get('/logout', (req, res, next) => {
 	res.redirect('/')
 })
 
-
-//auth LOCAL
-// router.get('/signup', passport.authenticate('local'),(req,res,next)=>{
-//     res.render('auth/signup')
+//FORGOTEN FUNCIONA PERO NO HABRÁ LOCAL MONGOOSE NI DB DE USERS PARA LOCAL PASSPORT
+// //forgoten routes
+// router.get('/semefue',(req,res,next)=>{
+// 	res.render('auth/forgoten')
 // })
+// router.post('/semefue',(req,res,next)=>{
+// 	data = req.body.forgotenUser
 
-// router.post('/login', 
-// passport.authenticate('local', { failureRedirect: '/login' }),
-// function(req, res) {
-//   res.redirect('/profile');
-// });
+// 			if (User.findOne(data)) {
+// 			res.flash("'" + e + "' ya está tomado")
+// 			}
 
-//forgoten routes
-router.get('/semefue',(req,res,next)=>{
-	res.render('auth/forgoten')
-})
-router.post('/semefue',(req,res,next)=>{
-	data = req.body.forgotenUser
-
-			if (User.findOne(data)) {
-			res.flash("'" + e + "' ya está tomado")
-			}
-
-	res.render('auth/forgoten')
-})
+// 	res.render('auth/forgoten')
+// })
 
 // signup routes
 router.get(`/signup`, (req, res) => res.render(`auth/signup`))
@@ -49,14 +38,6 @@ router.post(`/signup`,(req, res)=> {
 			email = req.body.email
 			password = req.password
 			password2 = req.password2
-
-			// if (User.findOne(username)) {
-			// 	res.flash("'" + e + "' ya está tomado")
-			// } else
-
-			// if (User.findOne(email)) {
-			// 	res.flash("'" + e + "' ya está utilizado, olvidaste tu contraseña?")
-			// }else{
 				User.register(req.body, req.body.password
 				).then(
 					
@@ -66,25 +47,6 @@ router.post(`/signup`,(req, res)=> {
 				.catch(e=>console.log(e))
 			// }
 		})
-
-
-				// User.register(new User({
-				// 		username,
-				// 		email,
-				// 		password
-				// 	}),
-				// 	err => {
-				// 		if (err) {
-				// 			console.log(err)
-				// 			return res.render(`/`)
-				// 		}
-				// 		passport.authenticate(`local`)(req, res, () => {
-				// 			res.redirect(`/perfil`)
-				// 		})
-				// 	}
-
-			
-
 
 			router.post(
 				`/login`,

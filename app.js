@@ -113,7 +113,7 @@ app.get('/auth/facebook/callback',
   });
 
 
-  app.use('/tuscanales', tuscanales)
+app.use('/tuscanales', tuscanales)
 app.use('/trending', trending)
 app.use('/perfil', perfil)
 app.use('/auth', auth)
