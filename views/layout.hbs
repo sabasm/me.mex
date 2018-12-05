@@ -48,7 +48,20 @@
     <div id="footer" class="icons">
       <div id="item1" class="items"><a href="/"><i class="fas fa-home"></i></div></a>
       <div id="item2" class="items"><a href="/trending"><i class="fas fa-bolt"></i></div></a>
-      <div id="item3" class="items"><a href="/addpost"><i class="fas fa-plus"></i></div></a>
+
+      {{!-- here goes the hidden button for directly upload an image for the post button --}}
+      <div id="item3" class="items">
+        <a id="addpost" onclick="loader()" ><i class="fas fa-plus"></i></a>
+          
+{{!-- href="/post/add" --}}
+        <form action="/post/add" method="POST" enctype="multipart/form-data">
+  
+  
+  <input hidden id="loader" type='file' onchange="readURL(this);" />
+        <input hidden id="submitpost" type="submit" >
+        </i></div>
+
+      {{!-- end of the posting button --}}
       <div id="item4" class="items"><a href="/tuscanales"><i class="fas fa-fire"></i></div></a>
       <div id="item5" class="items"><a href="/perfil"><i class="fas fa-user-circle"></i></div></a>
     </div>

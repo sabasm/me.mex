@@ -48,3 +48,18 @@ function updatePh(){
   },2000)
 }
 
+function loader(){
+  document.getElementById("loader").click()
+}
+
+function readURL(input) {
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function (e) {
+console.log('uploaded')
+document.getElementById("submitpost").click()
+      };
+      reader.readAsDataURL(input.files[0]);
+  }
+}
