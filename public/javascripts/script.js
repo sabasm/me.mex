@@ -47,4 +47,3 @@ function updatePh(){
     if(i === 3) i = 0
   },2000)
 }
-
