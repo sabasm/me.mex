@@ -63,3 +63,18 @@ document.getElementById("submitpost").click()
       reader.readAsDataURL(input.files[0]);
   }
 }
+
+
+var elem = document.querySelector('.infiniteScroll');
+var infScroll = new InfiniteScroll( elem, {
+  // options
+  path: '.pagination__next',
+  append: '.post',
+  history: false,
+});
+
+// element argument can be a selector string
+//   for an individual element
+var infScroll = new InfiniteScroll( '.infiniteScroll', {
+  // options
+});
