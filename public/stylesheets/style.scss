@@ -40,8 +40,7 @@ a {
 
 .bodyHbs {
   margin-top: 92px;
-  padding: 0 2em;
-  height: calc(100vh - 180px);
+  margin-bottom: 100px;
 }
 
 .icons {
@@ -176,6 +175,9 @@ span > b{
 #liked{
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
 }
 
 .likedDiv{
