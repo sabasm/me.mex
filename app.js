@@ -45,6 +45,7 @@ app.use(passport.session())
 
 
 //-------------------------------------------------------set up routes
+const pdp = require('./routes/pdp')
 const auth = require('./routes/auth')
 const index = require('./routes/index');
 const perfil = require('./routes/perfil')
@@ -113,6 +114,7 @@ app.get('/auth/facebook/callback',
     res.redirect('/perfil');
   });
 
+app.use('/pdp',pdp)
 app.use('/post',posting)
 app.use('/tuscanales', tuscanales)
 app.use('/trending', trending)
