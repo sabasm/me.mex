@@ -6,6 +6,7 @@ username:String,
 googleId:String,
 facebookId:String,
 email:String,
+photoURL: String,
 bio:{type:String
 ,default:"Aquí va tu bio o mensaje personal"},
 canalesNumber:{type:Number
