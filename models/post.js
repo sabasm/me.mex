@@ -9,26 +9,7 @@ creatorId:String,
 upvotes:{type:Number
     ,default:0},
 comments:Number,
-tags:{
-  type:[String],
-  enum:
-   ['Política',
-    'Deportes',
-    'Videojuegos',
-    'Animales',
-    'Series',
-    'Películas',
-    '+18',
-    'Caricaturas',
-    'Vehículos',
-    'WTF',
-    'Otros',
-    'Tech',
-    'Ciencias',
-    'Anime/Manga',
-    'Relaciones',
-    'Mensajes de texto'],
-    default: "Otros"}
+tags: [String]
 },{
   timestamps:{
     createdAt:'createdAt',
