@@ -11,9 +11,11 @@
               <div class="uk-card-media-top">
                   <img src="{{this.url}}">
               </div>
-              {{#each this.tags}}
-                  <small>{{this}} </small>
-              {{/each}}
+                <div class="tagsHome">
+                    {{#each this.tags}}
+                        <span class="tagsHomeSpan">#{{this}} </span>
+                    {{/each}}
+                </div>
               
           </div>
       </div>
