@@ -49,6 +49,7 @@ a {
   justify-content: space-around;
   background-color: white;
   padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .items {
@@ -58,7 +59,7 @@ a {
 }
 
 .items i {
-  font-size: 2em;
+  font-size: 1em;
 }
 
 .sidenav {
