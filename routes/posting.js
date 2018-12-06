@@ -49,9 +49,10 @@ router.get('/add',authCheck,(req,res,next)=>{
   })
 
 router.post('/edit',authCheck,(req,res,next)=>{
-  title=req.body.title
-  tags=req.body.tags
-  _id=req.body.id
+  console.log(req.body)
+  let title = req.body.title
+  let tags = req.body.tags
+  let _id = req.body.id
   Post.findOneAndUpdate({_id},{title,tags})
   .then(res.redirect('/perfil'))
    

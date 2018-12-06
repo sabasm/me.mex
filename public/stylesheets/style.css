@@ -184,6 +184,7 @@ span > b {
 
 .likedDiv {
   width: 33%;
+  margin-bottom: 10px;
 }
 
 .logoutA {
@@ -194,6 +195,23 @@ span > b {
 
 .inicio {
   text-align: center;
+}
+
+.centerImg {
+  text-align: center;
+}
+
+.centerImg img {
+  max-width: 50%;
+}
+
+.midWidth {
+  width: 50%;
+}
+
+.flexed {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */

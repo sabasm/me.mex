@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const postSchema= new Schema({
 title:{type:String,
-       default: "for the lack of a better title"   },
+       default: "for the lack of a better title"},
 url:String,
 creatorId:String,
 upvotes:{type:Number
