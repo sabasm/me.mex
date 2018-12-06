@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Post = require('../models/post')
+const User = require('../models/user')
 let logged 
 
 const authCheck=(req,res,next)=>{
@@ -24,10 +25,21 @@ creatorId
 });
 newPost.save()
 .then(post=>{
-  return res.status(200).send(newTodoObj)
+  //buscar el id del post por medio de su url anterior
+  Post.findOne({url: url}, function (error, post) {
+  })
+  .then(post=>{
+    // console.log('ENTRÉ AL THEN DE FIND ONE POST')
+    // console.log('ME TIRA ESTO: '+ post._id)
+    // console.log('se supone que mi usuario es : '+req.user.id)
+    User.findOneAndUpdate({"_id":req.user._id},{$push:{"likedPost":post._id}})
+    .then(console.log('los likes son: '+req.user.likedPost))
+    // console.log(req.user.likedPost)
+    // console.log(post)
+  })
 })
 .catch(err =>{
-  return res.status(500).send(err);
+  console.log(err)
 })
 res.render('posting/add')
 });
@@ -39,6 +51,7 @@ router.get('/add',authCheck,(req,res,next)=>{
 router.get('/edit',authCheck,(req,res,next)=>{
 res.send('editor after upload')
 })
+
 
 
 module.exports=router
