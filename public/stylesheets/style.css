@@ -26,6 +26,10 @@ a {
   cursor: pointer;
 }
 
+.left-items i {
+  font-size: 2em;
+}
+
 .right-items {
   margin-right: 2em;
 }
@@ -35,7 +39,7 @@ a {
 }
 
 .bodyHbs {
-  margin-top: 72px;
+  margin-top: 92px;
   padding: 0 2em;
   height: calc(100vh - 180px);
 }
@@ -152,6 +156,16 @@ a {
 .nombre {
   display: flex;
   justify-content: center;
+}
+
+.editarPerfil {
+  text-decoration: none;
+  border: 1px solid #4cc8ff;
+  padding: 0.5em;
+}
+
+span > b {
+  font-size: 1.5em;
 }
 
 /*# sourceMappingURL=style.css.map */

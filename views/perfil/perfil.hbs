@@ -1,11 +1,15 @@
 <div class="perfil">
   <img src="{{photoURL}}">
   <div class="nombre">
-    <br>
-    <a href="/perfil/edit"><h5>{{username}} 🖊</h5></a>
+    <h5>{{username}}</h5>
   </div>
+  <a class="editarPerfil" href="/perfil/edit">Editar Perfil</a>
   <p>{{bio}}</p>
-  <p><article><span> #️⃣: {{canalesNumber}} </span><span> 😂:{{likes}} </span><span> ⬆: {{upvotes}} </span></article></p>
+  <article>
+    <span><b>{{canalesNumber}}</b> canales que sigues</span> &nbsp;&nbsp;&nbsp;&nbsp;
+    <span><b>{{likes}}</b> memes que te gustan </span> <br> <br>
+    <span><b>{{upvotes}}</b> likes a tus memes </span>
+  </article>
   <p>Memes que te han gustado:</p>
   <div id="liked">
   {{#each likedPost}}
@@ -14,4 +18,5 @@
   </div>
   {{/each}}
   </div>
+  <a href="/auth/logout" class="logout">Logout :(</a>
 </div>
