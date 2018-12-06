@@ -48,7 +48,7 @@ creatorId
 newPost.save()
 .then(post => {
   console.log(post)
-  User.findByIdAndUpdate({"_id":req.user._id},{$push:{"likedPost":post.url}})
+  User.findByIdAndUpdate({"_id":req.user._id},{$push:{"likedPost":post.url}, $inc: {likes: 1}})
   .then(user => {
     res.render('posting/add',post)
     })
