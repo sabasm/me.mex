@@ -1,0 +1,26 @@
+<div class="article-feed">
+  <!-- .articles will be added to .article-feed -->
+  {{#each posts}}
+  <article class="post">
+    <div class="uk-child-width-1-2@m" uk-grid>
+      <div>
+          <div class="uk-card uk-card-default">
+              <div class="uk-card-body">
+                  <h3 class="uk-card-title">{{this.title}}</h3>
+              </div>
+              <div class="uk-card-media-top">
+                  <img src="{{this.url}}">
+              </div>
+                <div class="tagsHome">
+                    {{#each this.tags}}
+                        <span class="tagsHomeSpan">#{{this}} </span>
+                    {{/each}}
+                </div>
+              
+          </div>
+      </div>
+    </div>
+  </article>
+  {{/each}}
+
+</div>
