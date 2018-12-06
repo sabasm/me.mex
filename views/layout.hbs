@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,13 @@
   <title>{{title}}</title>
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/css/uikit.min.css" />
-  
+
   <link rel="stylesheet" href="/stylesheets/style.css" />
-  
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+    crossorigin="anonymous">
 </head>
+
 <body>
   <div id="mySidenav" class="sidenav">
     <a class="closebtn" id="toggleClose">&times;</a>
@@ -23,7 +26,7 @@
   <div id="main">
     <nav id="nav" class="navLayout">
       <div class="left-items">
-      <i id="toggleOpen" class="fas fa-bars"></i>
+        <i id="toggleOpen" class="fas fa-bars"></i>
         <p class="logo">
           ME.MEX
         </p>
@@ -32,43 +35,56 @@
         <form id="searchForm" action="/search" method="POST" class="uk-search uk-search-default">
           <a id="searchButton" class="uk-search-icon-flip" uk-search-icon></a>
           <input id="searchBar" class="uk-search-input fade" type="text" placeholder="¡Busca memes!" hidden>
-        </form> 
-      
+        </form>
+
       </div>
     </nav>
-    
+
     <div class="bodyHbs">
       {{{body}}}
     </div>
     <div>
-        DEV LINKS: <a href="/">HOME</a>|<a href="/trending">TRENDING</a>|<a href="/tuscanales">tuscanales</a> | <a href="/auth/login">LOGIN</a> | <a href="/auth/logout">LOGOUT</a> | <a href="/perfil">PERFIL</a>
+      DEV LINKS: <a href="/">HOME</a>|<a href="/trending">TRENDING</a>|<a href="/tuscanales">tuscanales</a> | <a href="/auth/login">LOGIN</a>
+      | <a href="/auth/logout">LOGOUT</a> | <a href="/perfil">PERFIL</a>
     </div>
-                <small>Por precauciones legales teneeeeeemos que advertir que este sitio utiliza cookies y al estar aquí las aceptas... pero no te preocupes, son iguales de inofensivas como una papa...(Aquí irá una foto de una papa + ">" + una foto de una galleta o una papa/galleta si encontramos)</small>
+    <small>Por precauciones legales teneeeeeemos que advertir que este sitio utiliza cookies y al estar aquí las
+      aceptas... pero no te preocupes, son iguales de inofensivas como una papa...(Aquí irá una foto de una papa + ">"
+      + una foto de una galleta o una papa/galleta si encontramos)</small>
   </div>
-    <div id="footer" class="icons">
-      <div id="item1" class="items"><a href="/"><i class="fas fa-home"></i></div></a>
-      <div id="item2" class="items"><a href="/trending"><i class="fas fa-bolt"></i></div></a>
+  <div id="footer" class="icons">
+    <div id="item1" class="items"><a href="/"><i class="fas fa-home"></i></div></a>
+    <div id="item2" class="items"><a href="/trending"><i class="fas fa-bolt"></i></div></a>
 
-      {{!-- here goes the hidden button for directly upload an image for the post button --}}
-      <div id="item3" class="items">
-        <a id="addpost" onclick="loader()" ><i class="fas fa-plus"></i></a>
-          
-        <form action="/post/add" method="POST" enctype="multipart/form-data">
-  
-  
-  <input hidden id="loader" type='file' onchange="readURL(this);" />
-        <input hidden id="submitpost" type="submit" >
-        </i></div>
 
-      {{!-- end of the posting button --}}
-      <div id="item4" class="items"><a href="/tuscanales"><i class="fas fa-fire"></i></div></a>
-      <div id="item5" class="items"><a href="/perfil"><i class="fas fa-user-circle"></i></div></a>
+
+
+    {{!-- here goes the hidden button for directly upload an image for the post button --}}
+    <div id="item3" class="items">
+      <a id="addpost" onclick="loader()"><i class="fas fa-plus"></i></a>
+      <input id="uploader" name="newPost" type='file' style="display:none" {{!-- onchange="readURL(this);"  --}} />
+      <form action="/post/add" method="POST" enctype="multipart/form-data">
+        <input id="url" name="url" type="text" value="empty">
+        <input style="display:none" id="submitpost" type="submit">
+      </form>
+      </i>
     </div>
+
+    {{!-- end of the posting button --}}
+
+
+
+
+    <div id="item4" class="items"><a href="/tuscanales"><i class="fas fa-fire"></i></div></a>
+    <div id="item5" class="items"><a href="/perfil"><i class="fas fa-user-circle"></i></div></a>
+  </div>
   </nav>
   <!-- UIkit JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
   <script src="/javascripts/script.js"></script>
-  
+  {{!-- AXIOS FOR API's --}}
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </body>
+
 </html>

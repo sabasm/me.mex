@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const User = require('../models/user')
+const Post = require('../models/post')
 let logged 
 
 const authCheck=(req,res,next)=>{
@@ -10,25 +10,35 @@ const authCheck=(req,res,next)=>{
   }
   }
 
-
   router.get('/add',authCheck,(req,res,next)=>{
-
-})
+    console.log('ptm')
+    res.send('ptm')
+  })
 
 router.post('/add',authCheck,(req,res,next)=>{
-  res.send('posted')
+console.log(req.body)
+res.send(req.body)
 });
 
+router.get('/edit',authCheck,(req,res,next)=>{
+res.send('editor after upload')
+})
 
-
-// router.post('/add',authCheck,(req,res,next)=>{
-//   let username = req.body.username
-//   let email=req.body.email
-//   let bio = req.body.bio
-
-//   User.findByIdAndUpdate(req.user._id,{username,bio,email})
-//   .then(
-//     res.redirect('/perfil'))
-// })
 
 module.exports=router
+
+// title:String,
+// creatorId:String,
+// upvotes:{type:Number
+//     ,default:0},
+// comments:Number,
+// tags:{
+//   type:[String],
+//   default:[0]}
+// },{
+//   timestamps:{
+//     createdAt:'createdAt',
+//     updatedAt:'updatedAt'
+//   }
+// }
+// )
