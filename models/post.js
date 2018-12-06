@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 //var passportLocalMongoose = require(`passport-local-mongoose`)
 const Schema = mongoose.Schema
 const postSchema= new Schema({
-title:String,
+title:{type:String,
+       default: "for the lack of a better title"   },
 url:String,
 creatorId:String,
 upvotes:{type:Number
@@ -10,7 +11,7 @@ upvotes:{type:Number
 comments:Number,
 tags:{
   type:[String],
-  default:[0]}
+  default:[]}
 },{
   timestamps:{
     createdAt:'createdAt',

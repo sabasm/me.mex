@@ -34,6 +34,8 @@ newPost.save()
     // console.log('se supone que mi usuario es : '+req.user.id)
     User.findOneAndUpdate({"_id":req.user._id},{$push:{"likedPost":post.url}})
     .then(console.log('los likes son: '+req.user.likedPost))
+
+      res.render('posting/add',post)
     // console.log(req.user.likedPost)
     // console.log(post)
   })
@@ -41,7 +43,6 @@ newPost.save()
 .catch(err =>{
   console.log(err)
 })
-res.render('posting/add')
 });
 
 router.get('/add',authCheck,(req,res,next)=>{
