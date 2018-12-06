@@ -1,9 +1,26 @@
-<img src="{{url}}">
-<form action="/post/edit" method="POST">
-<p><label>Titulo:<br><input type="text" placeholder="{{title}}" name="title"></label></p>
-<p><label>#canales:<br><input type="text" placeholder="{{tags}}" name="tags"></label></p>
-<input type="submit" value="enviar!">
-<input type="text" value="{{_id}}" name="id" style="display: none">
-</form>
+<div class="addMeme">
+  <form action="/post/edit" method="POST">
+    <fieldset class="uk-fieldset centerImg">
 
-<alt="post de memecanales#">
+        <legend class="uk-legend">¡Completa tu meme!</legend>
+
+        <div class="uk-margin">
+          <p> 
+            Título: 
+            <input class="uk-input midWidth" name="title" type="text" placeholder="Título" value=" ">
+          </p>
+        </div>
+        <div class="centerImg">
+          <img src="{{url}}">
+        </div>
+        
+        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid flexed">
+            <label><input class="uk-checkbox" name="tags" type="checkbox" checked> #General</label>
+            <label><input class="uk-checkbox" name="tags"  type="checkbox"> #Política</label>
+            <label><input class="uk-checkbox" name="tags"  type="checkbox"> #Animales</label>
+        </div>
+       
+     <button type="submit" class="uk-button uk-button-default">SUBIR</button>
+    </fieldset>
+</form>
+</div>
