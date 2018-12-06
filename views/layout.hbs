@@ -81,7 +81,31 @@
   <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
   <script src="/javascripts/script.js"></script>
   <script src="/javascripts/posting.js"></script>
+
+  {{!-- FACEBOOÇK --}}
   
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '750433031985846',
+      cookie     : true,
+      xfbml      : true,
+      version    : '3.2'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
   {{!-- AXIOS FOR API's --}}
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
