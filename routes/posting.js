@@ -50,25 +50,9 @@ router.get('/add',authCheck,(req,res,next)=>{
   })
 
 router.get('/edit',authCheck,(req,res,next)=>{
-res.send('editor after upload')
+  console.log(req.post)
+  title=req.body.title
+  tags=req.body.tags
 })
 
-
-
 module.exports=router
-
-// title:String,
-// creatorId:String,
-// upvotes:{type:Number
-//     ,default:0},
-// comments:Number,
-// tags:{
-//   type:[String],
-//   default:[0]}
-// },{
-//   timestamps:{
-//     createdAt:'createdAt',
-//     updatedAt:'updatedAt'
-//   }
-// }
-// )
