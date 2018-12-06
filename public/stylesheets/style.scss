@@ -135,12 +135,24 @@ a {
   
 }
 #liked{
-  width: 99%;
   display: flex;
-  justify-content: space-around;
-  background-color: blue;
 }
+
 .miniaturas{
+  width: 33%;
+}
+
+.perfil{
+  text-align: center;
+}
+
+.perfil>img{
+  border-radius: 50%;
+}
+
+.nombre{
+  display: flex;
+  justify-content: center;
 }
 
 

@@ -1,18 +1,17 @@
-<h5>{{username}}</h5> <a href="/perfil/edit">🖊</a>
-<p>{{bio}}</p>
-<p><article><span>#️⃣: {{canalesNumber}}</span><span>😂:{{likes}}</span><span>⬆: {{upvotes}}</span></article></p>
-
-<p>gustados y subidos:</p>
-<div id="liked">
+<div class="perfil">
+  <img src="{{photoURL}}">
+  <div class="nombre">
+    <br>
+    <a href="/perfil/edit"><h5>{{username}} 🖊</h5></a>
+  </div>
+  <p>{{bio}}</p>
+  <p><article><span> #️⃣: {{canalesNumber}} </span><span> 😂:{{likes}} </span><span> ⬆: {{upvotes}} </span></article></p>
+  <p>Memes que te han gustado:</p>
+  <div id="liked">
   {{#each likedPost}}
-    <img class="miniaturas" src="{{this}}" alt="somememe">
+  <div class="miniaturas">
+    <img src="{{this}}" alt="somememe">
+  </div>
   {{/each}}
+  </div>
 </div>
-{{!-- username:String,
-googleId:String,
-facebookId:String,
-email:String,
-bio:String,
-likedpost:{
-  type:String,
-  photoURL:[String] --}}
