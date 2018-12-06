@@ -11,6 +11,9 @@ bio:{type:String
 ,default:"Aquí va tu bio o mensaje personal"},
 canalesNumber:{type:Number
   ,default:0},
+follows:{
+    type:[String],
+    },
 likes:{type:Number
   ,default:0},
   upvotes:{type:Number

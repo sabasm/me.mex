@@ -4,13 +4,32 @@ const Schema = mongoose.Schema
 const canalSchema= new Schema({
 
 title:{type:String,
-       default: "for the lack of a better title"},
-url:String,
+  enum:
+   ['Política',
+    'Deportes',
+    'Videojuegos',
+    'Animales',
+    'Series',
+    'Películas',
+    '+18',
+    'Caricaturas',
+    'Vehículos',
+    'WTF',
+    'Otros',
+    'Tech',
+    'Ciencias',
+    'Anime/Manga',
+    'Relaciones',
+    'Mensajes de texto'],
+    default: "título del canal"},
 topUserId:String,
 followers:{type:Number
   ,default:0},
 upvotes:{type:Number
-    ,default:0}
+    ,default:0},
+posts:{
+  type:[String],
+  }
 },{
   timestamps:{
     createdAt:'createdAt',

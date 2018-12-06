@@ -11,7 +11,24 @@ upvotes:{type:Number
 comments:Number,
 tags:{
   type:[String],
-  default:[]}
+  enum:
+   ['Política',
+    'Deportes',
+    'Videojuegos',
+    'Animales',
+    'Series',
+    'Películas',
+    '+18',
+    'Caricaturas',
+    'Vehículos',
+    'WTF',
+    'Otros',
+    'Tech',
+    'Ciencias',
+    'Anime/Manga',
+    'Relaciones',
+    'Mensajes de texto'],
+    default: "Otros"}
 },{
   timestamps:{
     createdAt:'createdAt',
