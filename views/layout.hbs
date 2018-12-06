@@ -62,7 +62,7 @@
     <div id="item3" class="items">
       <a id="addpost" onclick="loader()"><i class="fas fa-plus"></i></a>
       <input id="uploader" name="newPost" type='file' style="display:none" {{!-- onchange="readURL(this);"  --}} />
-      <form action="/post/add" method="POST" enctype="multipart/form-data">
+      <form action="/post/add" method="POST">
         <input id="url" name="url" type="text" value="empty">
         <input style="display:none" id="submitpost" type="submit">
       </form>
@@ -79,6 +79,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-rc.25/js/uikit-icons.min.js"></script>
   <script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
   <script src="/javascripts/script.js"></script>
+  <script src="/javascripts/posting.js"></script>
+  
   {{!-- AXIOS FOR API's --}}
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
