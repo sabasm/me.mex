@@ -12,7 +12,6 @@ const authCheck=(req,res,next)=>{
   }
 
 router.post('/add',authCheck,(req,res,next)=>{
-  console.log(req.user)
 
 // Assuming this is from a POST request and the body of the
 // request contained the JSON of the new "todo" item to be saved
@@ -33,15 +32,15 @@ newPost.save()
     // console.log('ME TIRA ESTO: '+ post._id)
     // console.log('se supone que mi usuario es : '+req.user.id)
     User.findOneAndUpdate({"_id":req.user._id},{$push:{"likedPost":post.url}})
-    .then(console.log('los likes son: '+req.user.likedPost))
+    .then(res.render('posting/add',post))
 
-      res.render('posting/add',post)
+      
     // console.log(req.user.likedPost)
     // console.log(post)
   })
 })
 .catch(err =>{
-  console.log(err)
+  //console.log(err)
 })
 });
 
@@ -49,26 +48,17 @@ router.get('/add',authCheck,(req,res,next)=>{
   res.send('editor after upload')
   })
 
-router.get('/edit',authCheck,(req,res,next)=>{
-res.send('editor after upload')
+router.post('/edit',authCheck,(req,res,next)=>{
+  title=req.body.title
+  tags=req.body.tags
+  _id=req.body.id
+  Post.findOneAndUpdate({_id},{title,tags})
+  .then(res.redirect('/perfil'))
+   
 })
 
-
+router.get('/edit',authCheck,(req,res,next)=>{
+  res.send('guardando edit')
+})
 
 module.exports=router
-
-// title:String,
-// creatorId:String,
-// upvotes:{type:Number
-//     ,default:0},
-// comments:Number,
-// tags:{
-//   type:[String],
-//   default:[0]}
-// },{
-//   timestamps:{
-//     createdAt:'createdAt',
-//     updatedAt:'updatedAt'
-//   }
-// }
-// )
