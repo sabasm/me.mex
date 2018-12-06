@@ -213,4 +213,15 @@ span > b{
 .flexed{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.tagItem{
+  width: 25%;
+  margin-bottom: 1em;
+}
+
+.uk-accordion-title::before {
+  float: none;
 }
