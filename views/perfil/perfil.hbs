@@ -1,17 +1,17 @@
 <div class="perfil">
-  <img src="{{perfil.photoURL}}">
+  <img src="{{user.photoURL}}">
   <div class="nombre">
-    <h5>{{perfil.username}}</h5>
+    <h5>{{user.username}}</h5>
   </div>
   <a class="editarPerfil" href="/perfil/edit">Editar Perfil</a>
-  <p>{{perfil.bio}}</p>
+  <p>{{user.bio}}</p>
   <article>
-    <span><b>{{perfil.canalesNumber}}</b> canales que sigues</span> &nbsp;&nbsp;&nbsp;&nbsp;
-    <span> tus memes: <b>{{perfil.likes}}</b> </span> <br> <br>
-    <span><b>{{perfil.upvotes}}</b> likes a tus memes </span>
+    <span><b>{{user.canalesNumber}}</b> canales que sigues</span> &nbsp;&nbsp;&nbsp;&nbsp;
+    <span> tus memes: <b>{{user.likes}}</b> </span> <br> <br>
+    <span><b>{{user.upvotes}}</b> likes a tus memes </span>
   </article>
   <br>
-  <p>Memes que te han gustado:</p>
+  <p>Tus memes:</p>
   <div id="liked">
     {{#each posts}}
       <div class="likedDiv"><img src="{{this}}" alt="somememe"></div>
