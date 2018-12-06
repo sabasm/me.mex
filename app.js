@@ -45,6 +45,7 @@ app.use(passport.session())
 
 
 //-------------------------------------------------------set up routes
+const canales = require('./routes/canales')
 const pdp = require('./routes/pdp')
 const auth = require('./routes/auth')
 const index = require('./routes/index');
@@ -113,7 +114,7 @@ app.get('/auth/facebook/callback',
     // Successful authentication, redirect home.
     res.redirect('/perfil');
   });
-
+app.use('/canales',canales)
 app.use('/pdp',pdp)
 app.use('/post',posting)
 app.use('/tuscanales', tuscanales)
@@ -124,6 +125,6 @@ app.use('/', index);
 
 app.listen(3000, () => {
   console.log('Escuchando port 3000')
-})
+});
 
 module.exports = app;
