@@ -1,5 +1,5 @@
-// const clouAPI = 'https://api.cloudinary.com/v1_1/sabasmendivil/upload'
-//const clouPostPre = 'gccp4t1o'
+const clouAPI = 'https://api.cloudinary.com/v1_1/sabasmendivil/upload'
+const clouPostPre = 'gccp4t1o'
 var fileUpload = document.getElementById("uploader")
 
 fileUpload.addEventListener("change", function (event) {
