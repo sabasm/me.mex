@@ -1,5 +1,6 @@
 <div class="article-feed">
   <!-- .articles will be added to .article-feed -->
+  {{#each posts}}
   <article class="post">
     <div class="uk-child-width-1-2@m" uk-grid>
       <div>
@@ -8,25 +9,13 @@
                   <h3 class="uk-card-title">Media Top</h3>
               </div>
               <div class="uk-card-media-top">
-                  <img src="images/meme1.jpg">
+                  <img src="{{this.url}}">
               </div>
           </div>
       </div>
     </div>
   </article>
-  <article class="post">
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-body">
-                <h3 class="uk-card-title">Media Top</h3>
-            </div>
-            <div class="uk-card-media-top">
-                <img src="images/meme2.jpg">
-            </div>
-        </div>
-    </div>
-  </article>
-</div>
+  {{/each}}
 
 <!-- status elements -->
 <div class="scroller-status">
