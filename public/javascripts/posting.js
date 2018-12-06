@@ -18,8 +18,6 @@ fileUpload.addEventListener("change", function (event) {
     })
     .then(res=> {
     post = res.data.secure_url;
-    console.log(post);
-    
       document.getElementById("url").value = post
       document.getElementById("submitpost").click()
       
