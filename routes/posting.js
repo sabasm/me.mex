@@ -53,6 +53,7 @@ router.post('/edit',authCheck,(req,res,next)=>{
   let title = req.body.title
   let tags = req.body.tags
   let _id = req.body.id
+
   Post.findOneAndUpdate({_id},{title,tags})
   .then(res.redirect('/perfil'))
    
