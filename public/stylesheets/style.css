@@ -225,4 +225,37 @@ span > b {
   float: none;
 }
 
+.post {
+  text-align: center;
+  margin: 20px;
+}
+
+.uk-first-column {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (max-width: 800px) {
+  .uk-first-column {
+    width: 80%;
+  }
+}
+@media (max-width: 450px) {
+  .uk-first-column {
+    width: 90%;
+  }
+}
+.tagsHome {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1em;
+  padding: 2em;
+  justify-content: space-around;
+}
+
+.tagsHomeSpan {
+  width: 25%;
+}
+
 /*# sourceMappingURL=style.css.map */
