@@ -10,7 +10,9 @@ res.redirect('/auth/login')
 }
 
 router.get('/',authCheck,(req,res,next)=>{
-  res.render('perfil/perfil',req.user)
+  let user = req.user
+  let posts = req.user.likedPost.reverse()
+  res.render('perfil/perfil',{user,posts})
 })
 
 //EDITOR DE PERFIL
