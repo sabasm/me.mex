@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const canalSchema= new Schema({
 
-title:[String],
+title:String,
 topUserId:String,
 followers:{type:Number
   ,default:0},

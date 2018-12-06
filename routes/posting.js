@@ -12,10 +12,32 @@ const authCheck=(req,res,next)=>{
   }
   }
 
-router.post('/add',authCheck,(req,res,next)=>{
+  // const canales=['juegos',
+  // 'política',
+  // 'deportes',
+  // 'animales',
+  // 'películas',
+  // 'series',
+  // 'caricaturas',
+  // 'WTF',
+  // 'tech',
+  // 'mensajesDeTexto',
+  // 'vehículos',
+  // '+18',
+  // 'vehículos',
+  // 'ciencias',
+  // 'anime',
+  // 'relaciones']
 
-// Assuming this is from a POST request and the body of the
-// request contained the JSON of the new "todo" item to be saved
+  // canales.forEach(e=>{
+  //   const newCanal = new Canal({
+  //     title:e
+  //   })
+  //   newCanal.save()
+  // })
+ 
+
+router.post('/add',authCheck,(req,res,next)=>{
 url = req.body.url
 creatorId = req.user._id
 
@@ -58,18 +80,11 @@ router.post('/edit',authCheck,(req,res,next)=>{
   Post.findOneAndUpdate({_id},{title,tags})
   .then(post=>{
     post.tags.forEach(tag => {
-      console.log(tag)
-      Canal.findOne({title:tag},function(err,canal){
-        console.log(canal)
-        if(canal===null){
-          console.log('no hay canal')}
-        else{
-          console.log('si hay canal')
-        }
+      Canal.findOne({title: tag}, function (error, canal) {
+      Canal.findByIdAndUpdate(canal._id, {$push: {"posts": post._id}}).then(res.redirect('/perfil'))
       })
       
     });
-   // res.redirect('/perfil')
   })
    
 })
