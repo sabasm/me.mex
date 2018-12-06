@@ -3,11 +3,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 const postSchema= new Schema({
 title:String,
-<<<<<<< HEAD
 url:String,
-=======
-imgURL: String,
->>>>>>> 4a93b5b51811e6ba9cd005986eee2e87b0e01d22
 creatorId:String,
 upvotes:{type:Number
     ,default:0},

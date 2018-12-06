@@ -81,7 +81,6 @@ function loader() {
   fileUpload = document.getElementById("uploader").click();
 }
 
-<<<<<<< HEAD
 // function readURL(input) {
 //   if (input.files && input.files[0]) {
 //     var reader = new FileReader();
@@ -94,19 +93,6 @@ function loader() {
 //     reader.readAsDataURL(input.files[0]);
 //   }
 // }
-=======
-function readURL(input) {
-  if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function (e) {
-console.log('uploaded')
-document.getElementById("submitpost").click()
-      };
-      reader.readAsDataURL(input.files[0]);
-  }
-}
-
 
 var elem = document.querySelector('.infiniteScroll');
 var infScroll = new InfiniteScroll( elem, {
@@ -121,4 +107,3 @@ var infScroll = new InfiniteScroll( elem, {
 var infScroll = new InfiniteScroll( '.infiniteScroll', {
   // options
 });
->>>>>>> 4a93b5b51811e6ba9cd005986eee2e87b0e01d22
