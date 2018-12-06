@@ -138,9 +138,6 @@ a {
   transition: opacity 350ms ease-in-out;
   
 }
-#liked{
-  display: flex;
-}
 
 .miniaturas{
   width: 33%;
@@ -168,4 +165,25 @@ a {
 
 span > b{
   font-size: 1.5em;
+}
+
+.logout{
+  margin: 3em;
+}
+.logout a{
+  text-decoration: none;
+}
+#liked{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.likedDiv{
+  width: 33%;
+}
+
+.logoutA{
+  font-size: 1em !important;
+  margin-top: 65vh;
+  margin-left: 4em;
 }
