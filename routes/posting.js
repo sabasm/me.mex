@@ -1,7 +1,7 @@
 const router = require('express').Router();
-
 const Post = require('../models/post')
 const User = require('../models/user')
+const Canal = require('../models/canales')
 let logged 
 
 const authCheck=(req,res,next)=>{
@@ -56,7 +56,21 @@ router.post('/edit',authCheck,(req,res,next)=>{
   let _id = req.body.id
 
   Post.findOneAndUpdate({_id},{title,tags})
-  .then(res.redirect('/perfil'))
+  .then(post=>{
+    post.tags.forEach(tag => {
+      console.log(tag)
+      Canal.findOne({title:tag},function(err,canal){
+        console.log(canal)
+        if(canal===null){
+          console.log('no hay canal')}
+        else{
+          console.log('si hay canal')
+        }
+      })
+      
+    });
+   // res.redirect('/perfil')
+  })
    
 })
 
