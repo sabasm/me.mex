@@ -17,6 +17,8 @@ a {
   position: fixed;
   top: 0;
   background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(30,30,255,.3);
+  z-index: 1;
 }
 
 .left-items {
@@ -53,6 +55,7 @@ a {
   background-color: white;
   padding-bottom: 10px;
   padding-top: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.2);
 }
 
 .items {
@@ -188,4 +191,8 @@ span > b{
   font-size: 1em !important;
   margin-top: 65vh;
   margin-left: 4em;
+}
+
+.inicio{
+  text-align: center;
 }
