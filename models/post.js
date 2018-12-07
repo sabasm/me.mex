@@ -5,7 +5,10 @@ const postSchema= new Schema({
 title:{type:String,
        default: "for the lack of a better title"},
 url:String,
-creatorId:String,
+creatorId:{
+  type: Schema.Types.ObjectId,
+  ref: "User"
+},
 upvotes:{type:Number
     ,default:0},
 comments:Number,
