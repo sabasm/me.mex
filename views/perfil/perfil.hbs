@@ -14,7 +14,8 @@
   <p>Tus memes:</p>
   <div id="liked">
     {{#each posts}}
-      <div class="likedDiv"><img src="{{this}}" alt="somememe"></div>
+    <div class="likedDiv"><img src="{{this}}" alt="somememe">
+    <form action="/perfil" method="POST"><input type="submit" value="Borrar 💔" style="background-color: brown"></form></div>
     {{/each}}
   </div>
 </div>
