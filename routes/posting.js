@@ -43,10 +43,14 @@ router.post('/like',authCheck, (req,res,next)=> {
   let {value} = req.body
   console.log(value)
   Post.findOneAndUpdate({url: value}, {$inc: {upvotes: 1}})
-  User.findByIdAndUpdate(req.user._id,{$push:{"likedPost":value}, $inc: {likes: 1}})
-  .then( response => {
-    res.sendStatus(201);
+  .then(respon => {
+    
+    User.findByIdAndUpdate(req.user._id,{$push:{"likedPost":value}, $inc: {likes: 1}})
+    .then( response => {
+      res.sendStatus(201);
+    })
   })
+  
 })
  
 router.post('/add',authCheck,(req,res,next)=>{
