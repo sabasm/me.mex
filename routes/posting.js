@@ -12,32 +12,6 @@ const authCheck=(req,res,next)=>{
   }
   }
 
-  
-  // ,'política',
-  // 'deportes',
-  // 'animales',
-  // 'películas',
-  // 'series',
-  // 'caricaturas',
-  // 'WTF',
-  // 'tech',
-  // 'mensajesDeTexto',
-  // 'vehículos',
-  // '+18',
-  // 'vehículos',
-  // 'ciencias',
-  // 'anime',
-  // 'relaciones']
-
-  // canales.forEach(e=>{
-    //----------------------------------TO ADD CHANNELS
-    //const canales='food'
-    // const newCanal = new Canal({
-    //   title:canales
-    // })
-    // newCanal.save()
-  // })
-
 router.post('/like',authCheck, (req,res,next)=> {
   console.log('liked on backend')
   let {value} = req.body
