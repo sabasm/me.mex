@@ -69,7 +69,7 @@ passport.use(
 passport.use(new FacebookStrategy({
     clientID: process.env.FACEAPPID,
     clientSecret: process.env.FACEAPPKEY,
-    callbackURL: "https://memecanales.herokuapp.com/auth/callback/facebook",
+    callbackURL: "https://memecanales.herokuapp.com/auth/facebook/callback",
     profileFields: ['id', 'displayName', 'photos', 'email']
   },
   function(accessToken, refreshToken, profile, done) {
