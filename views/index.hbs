@@ -16,7 +16,10 @@
                         <a href="canales/{{this}}"><span class="tagsHomeSpan">#{{this}}</span></a>
                     {{/each}}
                 </div>
-              
+                <form class="likesTag" action="/posting/like" method="POST">
+                    <input style="display:none;" type="text" name="url" value="{{this.url}}">
+                    <button type="submit"></button>
+                </form>
           </div>
       </div>
     </div>
@@ -26,10 +29,37 @@
 </div>
 <head>
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "ca-pub-1713735179551973",
-          enable_page_level_ads: true
-     });
-</script>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-1713735179551973",
+                enable_page_level_ads: true
+            });
+        </script>
 </head>
+
+<script>
+    let forms = document.querySelectorAll('.likesTag')  
+    console.log(forms)
+    for(var i = 0; i < forms.length; i++){
+        forms[i].addEventListener('submit', function(e){
+            e.preventDefault()
+            let url = {value: e.srcElement[0].value}
+            console.log(url)
+            fetch('/post/like', {method: 'POST', body: JSON.stringify(url), 
+            headers:{
+                'Content-Type': 'application/json'
+            }})
+            .then(function(response) {
+            if(response.ok) {
+                return;
+            }
+            throw new Error('Request failed.');
+            })
+            .catch(function(error) {
+            console.log(error);
+            });
+        })
+    }
+        
+    
+</script>
