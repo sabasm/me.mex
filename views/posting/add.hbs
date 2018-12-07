@@ -2,47 +2,56 @@
   <form action="/post/edit" method="POST">
     <fieldset class="uk-fieldset centerImg">
 
-        <legend class="uk-legend">¡Completa tu meme!</legend>
+      <legend class="uk-legend">¡Completa tu meme!</legend>
 
-        <div class="uk-margin">
-          <p> 
-            Título: 
-            <input class="uk-input midWidth" name="title" type="text" placeholder="Título" value=" ">
-            <input style="display:none;" type="text" name="id" value="{{_id}}">
-          </p>
-        </div>
-        <div class="centerImg">
-          <img src="{{url}}">
-        </div>
-        
-        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid flexed">
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="juegos" type="checkbox" checked> #Videojuegos</label>
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="política"  type="checkbox"> #Política</label>
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="deportes" type="checkbox"> #Deportes</label>
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="animales" type="checkbox"> #Animales</label>
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="películas" type="checkbox"> #Películas</label>
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="series" type="checkbox"> #Series</label>
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="caricaturas" type="checkbox"> #Caricaturas</label>
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="WTF" type="checkbox"> #WTF</label>
-            <label class=" tagItem"><input class="uk-checkbox" name="tags" value="food" type="checkbox"> #Food</label>
-            <ul uk-accordion>
-              <li>
-                  <a class="uk-accordion-title" href="#">Ver todos...</a>
-                  <div class="uk-accordion-content flexed">
-                    <label class=" tagItem"><input class="uk-checkbox" name="tags" value="tech" type="checkbox"> #Tech</label>
-                    <label class=" tagItem"><input class="uk-checkbox" name="tags" value="mensajesDeTexto" type="checkbox"> #Mensajes de texto</label>
-                    <label class=" tagItem"><input class="uk-checkbox" name="tags" value="vehículos" type="checkbox"> #Vehículos</label>
-                    <label class=" tagItem"><input class="uk-checkbox" name="tags" value="+18" type="checkbox"> #+18</label>
-                    <label class=" tagItem"><input class="uk-checkbox" name="tags" value="vehículos" type="checkbox"> #Vehículos</label>
-                    <label class=" tagItem"><input class="uk-checkbox" name="tags" value="ciencias" type="checkbox"> #Ciencias</label>
-                    <label class=" tagItem"><input class="uk-checkbox" name="tags" value="anime" type="checkbox"> #Anime/Manga</label>
-                    <label class=" tagItem"><input class="uk-checkbox" name="tags" value="relaciones" type="checkbox"> #Relaciones ❤️</label>
-                  </div>
-              </li>
-            </ul>
-        </div>
-       
-     <button type="submit" class="uk-button uk-button-default">SUBIR</button>
+      <div class="uk-margin">
+        <p>
+          Título:
+          <input class="uk-input midWidth" name="title" type="text" placeholder="Título" value=" ">
+          <input style="display:none;" type="text" name="id" value="{{_id}}">
+        </p>
+      </div>
+      <div class="centerImg">
+        <img src="{{url}}">
+      </div>
+
+      <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid flexed">
+        <label class=" tagItem"><input class="uk-checkbox" name="tags" value="juegos" type="checkbox" checked>
+          #Videojuegos</label>
+        <label class=" tagItem"><input class="uk-checkbox" name="tags" value="política" type="checkbox"> #Política</label>
+        <label class=" tagItem"><input class="uk-checkbox" name="tags" value="deportes" type="checkbox"> #Deportes</label>
+        <label class=" tagItem"><input class="uk-checkbox" name="tags" value="animales" type="checkbox"> #Animales</label>
+        <label class=" tagItem"><input class="uk-checkbox" name="tags" value="películas" type="checkbox"> #Películas</label>
+        <label class=" tagItem"><input class="uk-checkbox" name="tags" value="series" type="checkbox"> #Series</label>
+        <label class=" tagItem"><input class="uk-checkbox" name="tags" value="caricaturas" type="checkbox">
+          #Caricaturas</label>
+        <label class=" tagItem"><input class="uk-checkbox" name="tags" value="WTF" type="checkbox"> #WTF</label>
+        <ul uk-accordion>
+          <li>
+            <a class="uk-accordion-title" href="#">Ver todos...</a>
+            <div class="uk-accordion-content flexed">
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="tech" type="checkbox"> #Tech</label>
+
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="food" type="checkbox"> #Food</label>
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="mensajesDeTexto" type="checkbox">
+                #Mensajes de texto</label>
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="vehículos" type="checkbox">
+                #Vehículos</label>
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="+18" type="checkbox"> #+18</label>
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="vehículos" type="checkbox">
+                #Vehículos</label>
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="ciencias" type="checkbox">
+                #Ciencias</label>
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="anime" type="checkbox">
+                #Anime/Manga</label>
+              <label class=" tagItem"><input class="uk-checkbox" name="tags" value="relaciones" type="checkbox">
+                #Relaciones ❤️</label>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <button type="submit" class="uk-button uk-button-default">SUBIR</button>
     </fieldset>
-</form>
+  </form>
 </div>
