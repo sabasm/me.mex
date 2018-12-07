@@ -12,6 +12,20 @@ const authCheck=(req,res,next)=>{
   }
   }
 
+router.post('/delete', (req,res,next) => {
+  let {value} = req.body
+  console.log(value)
+  Post.findOneAndDelete({url: value})
+  .then(respon => {
+    console.log(value)
+    User.findOneAndUpdate(req.user._id, {$pull: {likedPost: value}, $inc: {likes: -1}})
+    .then(user => {
+      
+    })
+    res.sendStatus(201);
+  })
+})
+
 router.post('/like',authCheck, (req,res,next)=> {
   console.log('liked on backend')
   let {value} = req.body

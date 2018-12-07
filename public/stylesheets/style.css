@@ -327,4 +327,8 @@ span > b {
   margin-bottom: -15px;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 /*# sourceMappingURL=style.css.map */
