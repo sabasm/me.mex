@@ -25,6 +25,7 @@ document.getElementById('cover').addEventListener('click', function () {
 })
 
 document.getElementById('searchButton').addEventListener('click', function () {
+  console.log('buttonclicked')
   document.getElementById('searchBar').removeAttribute('hidden')
   document.getElementById('searchButton').setAttribute('href', '#')
   document.getElementById('searchButton').setAttribute('onclick', "document.getElementById('searchForm').submit()")
