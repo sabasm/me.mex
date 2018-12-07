@@ -1,6 +1,20 @@
-<form action="/perfil/edit" method="POST">
-<p><label>Nombre de usuario:<input type="text" placeholder="{{username}}" name="username"></label></p>
-<p><label>Bio:<input type="text" placeholder="{{bio}}" name="bio"></label></p>
-<p><label>Email:<input type="text" placeholder="{{email}}" name="email"><p><small>sólo tú puedes ver el correo, si nos das esta información, con gusto te enviaremos un mail cada semana con los mejores memes de tus canales favoritos!</small></label></p>
-<input type="submit" value="guardar">
-</form>
+<div class="perfil">
+  <br>
+  <img src="{{photoURL}}">
+  <h5>¡Hola {{username}}! Edita tu perfil</h5>
+  <form class="editForm" action="/perfil/edit" method="POST">
+    <p>
+      Nombre:
+      <br>
+      <input class="uk-input" type="text" placeholder="{{username}}" name="username">
+    </p>
+    <p>
+      Bio:
+      <input class="uk-input" type="text" placeholder="{{bio}}" name="bio">
+    </p>
+    <p>
+      Email:
+      <input class="uk-input" type="text" placeholder="{{email}}" name="email">
+    </p>
+    <button type="submit" class="uk-button uk-button-default">Guardar</button>
+  </form>

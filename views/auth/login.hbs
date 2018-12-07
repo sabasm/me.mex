@@ -1,20 +1,16 @@
-        <header>
-            <h1>Ingresa!</h1>
-        </header>
-        <main>
-            {{!-- <form action="/auth/login" method="POST">
-            <label><p>Correo:<br>
-                <input type="text" name="email" placeholder="memes@longcats.com"></p></label>
-                <label><p>Contraseña:<br>
-                <input type="password" name="password" placeholder="DogLover49"></p></label>
-                <input type="submit" text="Iniciar Sesión"><br>
-                <a href="/auth/semefue"><small>olvidé mi usuario/contraseña</small></a><br><br>
-                <label>o bien</label>
-            </form>
-            <br> --}}
+<div class="loginLayout">
+    <h4>Iniciar sesión</h4>
+    <a class="google-btn googleButton uk-button uk-button-primary uk-button-large" href="/auth/google">
+        Inicia con Google
+    </a>
+    <br><br>
+    <a class="facebookButton facebook-btn uk-button uk-button-primary uk-button-large" href="/auth/facebook">
+        Inicia con Facebook
+    </a>
+    <br><br>
+    <a class="laterButton uk-button uk-button-primary uk-button-large" href="/trending">
+        <p class="despues"> Después...</p>
 
-            <a class="facebook-btn" href="/auth/facebook">Facebook</a><br>
-            <a class="google-btn" href="/auth/google">Google+</a><br>
-            {{!-- <a class="email-btn" href="/auth/signup">Regístrate</a><br> --}}
-            <p><small><a href="/trending">luego ;)</a></small></p>
-        </main>
+        <small>(No podrás guardar tus memes favoritos)</small>
+    </a>
+</div>

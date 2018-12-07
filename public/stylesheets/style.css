@@ -301,5 +301,30 @@ span > b {
     width: 100%;
   }
 }
+.editForm {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.loginLayout {
+  text-align: center;
+}
+
+.googleButton {
+  background-color: #38a255;
+}
+
+.facebookButton {
+  background-color: #4266aa;
+}
+
+.google-btn, .facebook-btn {
+  text-decoration: none;
+}
+
+.despues {
+  margin-bottom: -15px;
+}
 
 /*# sourceMappingURL=style.css.map */
