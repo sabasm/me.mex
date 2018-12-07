@@ -269,4 +269,8 @@ span > b {
   color: #00b6ff;
 }
 
+.submitButton:focus {
+  outline: 0px;
+}
+
 /*# sourceMappingURL=style.css.map */

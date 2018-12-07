@@ -51,6 +51,19 @@
             }})
             .then(function(response) {
             if(response.ok) {
+                let likesNumber = e.srcElement[1].innerHTML
+                let number = likesNumber[likesNumber.length - 1]
+                let dec = likesNumber[likesNumber.length - 2]
+                console.log(typeof(dec))
+                    if(dec === '>') {
+                        number ++
+                        e.srcElement[1].innerHTML = `<i class="likeIcon far fa-thumbs-up"></i>${number}`
+                    } else{
+                        if(number === 9) number = 
+                        number ++
+                        e.srcElement[1].innerHTML = `<i class="likeIcon far fa-thumbs-up"></i>${dec}${number}`
+                    }
+                
                 return;
             }
             throw new Error('Request failed.');

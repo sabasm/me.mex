@@ -271,3 +271,7 @@ span > b{
 .likeIcon{
   color: #00b6ff;
 }
+
+.submitButton:focus{
+  outline: 0px;
+}
