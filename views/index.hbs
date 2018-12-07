@@ -13,12 +13,12 @@
               </div>
                 <div class="tagsHome">
                     {{#each this.tags}}
-                        <span class="tagsHomeSpan">#{{this}} </span>
+                        <a href="/post/{{this}}" class="tagsHomeSpan">#{{this}} </a>
                     {{/each}}
                 </div>
                 <form class="likesTag" action="/posting/like" method="POST">
                     <input style="display:none;" type="text" name="url" value="{{this.url}}">
-                    <button class="submitButton" type="submit"><i class="far fa-thumbs-up"></i></button>
+                    <button class="submitButton" type="submit"><i class="likeIcon far fa-thumbs-up"></i>{{this.upvotes}}</button>
                 </form>
           </div>
       </div>
