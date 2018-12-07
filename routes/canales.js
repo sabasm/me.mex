@@ -14,7 +14,7 @@ res.render('canales/lista',{all})
 router.get('/:canal',(req,res,next)=>{
   let canal = req.params.canal
   Post.find({tags:canal}).then(posts=>
-res.render('canales/canal',{posts})
+res.render('index',{posts})
   )
 });
 
