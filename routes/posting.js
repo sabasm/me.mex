@@ -51,14 +51,13 @@ router.post('/edit',authCheck,(req,res,next)=>{
   let title = req.body.title
   let tags = req.body.tags
   let _id = req.body.id
-
+  
   Post.findByIdAndUpdate(_id,{title,tags})
   .then(post=>{
     post.tags.forEach(tag => {
       Canal.findOne({title: tag}, function (error, canal) {
       Canal.findByIdAndUpdate(canal._id, {$push: {posts: post._id}})
       })
-      
     });
     res.redirect('/perfil')
   })

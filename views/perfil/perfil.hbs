@@ -14,8 +14,9 @@
   <p>Tus memes:</p>
   <div id="liked">
     {{#each posts}}
-    <div class="likedDiv"><img src="{{this}}" alt="somememe">
-                  <div id="share-buttons">
+    <div class="likedDiv">
+      <img src="{{this}}" alt="somememe">
+    <div id="share-buttons">
     <!-- Email -->
     <a href="mailto:?Subject=Un%20meme%20para%20ti!&body=Checa%20este%20memazo%20"{{this}}"!">
         <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
@@ -34,8 +35,12 @@
     <a href="https://twitter.com/share?url={{this}}" target="_blank">
         <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
     </a>
-</div>
-    <form action="/perfil" method="POST"><input type="submit" value="Borrar 💔" style="background-color: brown"></form></div>
+    </div>
+    <form action="/perfil" method="POST">
+    <button class="uk-button uk-button-primary uk-button-small">Borrar</button>
+    <input type="submit" value="Borrar 💔" style="background-color: brown">
+    </form>
+    </div>
     {{/each}}
   </div>
 </div>
