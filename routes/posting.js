@@ -12,18 +12,13 @@ const authCheck=(req,res,next)=>{
   }
   }
 
-router.post('/delete', (req,res,next) => {
+router.post('/delete', authCheck, (req,res,next) => {
   let {value} = req.body
-  console.log(value)
-  Post.findOneAndDelete({url: value})
-  .then(respon => {
-    console.log(value)
-    User.findOneAndUpdate(req.user._id, {$pull: {likedPost: value}, $inc: {likes: -1}})
+    User.findByIdAndUpdate(req.user._id, {$pull: {likedPost: value}, $inc: {likes: -1}})
     .then(user => {
-      
+      console.log(user)
     })
     res.sendStatus(201);
-  })
 })
 
 router.post('/like',authCheck, (req,res,next)=> {
