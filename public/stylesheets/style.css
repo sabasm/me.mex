@@ -273,4 +273,33 @@ span > b {
   outline: 0px;
 }
 
+.canales {
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.linksChanel {
+  width: 33%;
+  margin-bottom: 1em;
+}
+
+.uk-button-primary {
+  background-color: #00b6ff;
+}
+
+@media (max-width: 650px) {
+  .linksChanel {
+    width: 50%;
+  }
+}
+@media (max-width: 450px) {
+  .linksChanel {
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

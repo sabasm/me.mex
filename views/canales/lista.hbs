@@ -1,4 +1,10 @@
-<h3>MemeCanales#</h3>
-{{#each all}}
-<p><a href="/canales/{{this.title}}">{{this.title}}</a></p>
-{{/each}}
+<div class="canales">
+  <h3>MemeCanales#</h3>
+  <div class="buttons">
+    {{#each all}}
+      <a class="linksChanel" href="/canales/{{this.title}}"><button class="uk-button uk-button-primary">{{this.title}}</button></a>
+    {{/each}}
+  </div>
+</div>
+
+
