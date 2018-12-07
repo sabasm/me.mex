@@ -34,19 +34,19 @@ document.getElementById('searchButton').addEventListener('click', function () {
   document.getElementById('bodyHbs').style.height = 'calc(100vh - 130px)'
 })
 
-let i = 0
+let j = 0
 let words = ['Memela...', 'KYC viejo lesbiano...', 'Channel...']
 
 function nextWord() {
-  i++
-  return words[i - 1]
+  j++
+  return words[j - 1]
 }
 
 function updatePh() {
   var intervalo = setInterval(function () {
 
     document.getElementById('searchBar').setAttribute('placeholder', `${nextWord()}`)
-    if (i === 3) i = 0
+    if (j === 3) j = 0
   }, 2000)
 }
 
