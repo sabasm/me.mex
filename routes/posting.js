@@ -35,6 +35,16 @@ const authCheck=(req,res,next)=>{
   //   })
   //   newCanal.save()
   // })
+
+router.post('/like',authCheck, (req,res,next)=> {
+  console.log('liked on backend')
+  let {value} = req.body
+  console.log(value)
+  User.findByIdAndUpdate(req.user._id,{$push:{"likedPost":value}, $inc: {likes: 1}})
+  .then( response => {
+    res.sendStatus(201);
+  })
+})
  
 router.post('/add',authCheck,(req,res,next)=>{
 const url = req.body.url
@@ -47,7 +57,6 @@ creatorId
 
 newPost.save()
 .then(post => {
-  console.log(post)
   User.findByIdAndUpdate({"_id":req.user._id},{$push:{"likedPost":post.url}, $inc: {likes: 1}})
   .then(user => {
     res.render('posting/add',post)
