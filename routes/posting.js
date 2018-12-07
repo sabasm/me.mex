@@ -12,8 +12,8 @@ const authCheck=(req,res,next)=>{
   }
   }
 
-  // const canales=['juegos',
-  // 'política',
+  
+  // ,'política',
   // 'deportes',
   // 'animales',
   // 'películas',
@@ -30,10 +30,12 @@ const authCheck=(req,res,next)=>{
   // 'relaciones']
 
   // canales.forEach(e=>{
-  //   const newCanal = new Canal({
-  //     title:e
-  //   })
-  //   newCanal.save()
+    //----------------------------------TO ADD CHANNELS
+    //const canales='food'
+    // const newCanal = new Canal({
+    //   title:canales
+    // })
+    // newCanal.save()
   // })
 
 router.post('/like',authCheck, (req,res,next)=> {
