@@ -1,0 +1,39 @@
+{
+  "name": "me.mex",
+  "description": "Mex Ironhack module 2 project by Gerard Jimenez and Sabás Mendívil, a meme's webapp!",
+  "scripts": {
+  },
+  "env": {
+    "cookeyKey": {
+      "required": true
+    },
+    "DB": {
+      "required": true
+    },
+    "FACEAPPID": {
+      "required": true
+    },
+    "FACEAPPKEY": {
+      "required": true
+    },
+    "GOOGCLIENTID": {
+      "required": true
+    },
+    "GOOGCLIENTSECRET": {
+      "required": true
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

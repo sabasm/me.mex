@@ -65,13 +65,25 @@ router.post('/edit',authCheck,(req,res,next)=>{
   .then(post=>{
     post.tags.forEach(tag => {
       Canal.findOne({title: tag}, function (error, canal) {
-      Canal.findByIdAndUpdate(canal._id, {$push: {"posts": post._id}})
+      Canal.findByIdAndUpdate(canal._id, {$push: {posts: post._id}})
       })
     });
     res.redirect('/perfil')
   })
-   
 })
+//   Post.findByIdAndUpdate(_id,{title,tags})
+//   .then(post=>{
+//     post.tags.forEach(tag => {
+//       Canal.findOne({title: tag}, function (error, canal) {
+//       Canal.findByIdAndUpdate(canal._id, {$push: {"posts": post._id}})
+//       })
+      
+//     });
+//     res.redirect('/perfil')
+//   })
+   
+// })
+  
 
 router.get('/edit',authCheck,(req,res,next)=>{
   res.send('guardando edit')
