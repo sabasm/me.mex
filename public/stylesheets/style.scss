@@ -249,6 +249,12 @@ span > b{
   }
 }
 
+@media(max-width: 650px){
+  .likedDiv{
+    width: 100%;
+  }
+}
+
 .tagsHome{
   display: flex;
   flex-wrap: wrap;
