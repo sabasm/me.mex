@@ -15,24 +15,26 @@
   <div id="liked">
     {{#each posts}}
     <div class="likedDiv"><img src="{{this}}" alt="somememe">
-        <!-- Email -->
-    <a href="mailto:?Subject=Un%20meme%20para%20ti!&body=Checa%20este%20memazo%20{{link}}!">
+                  <div id="share-buttons">
+    <!-- Email -->
+    <a href="mailto:?Subject=Un%20meme%20para%20ti!&body=Checa%20este%20memazo%20"{{this.url}}"!">
         <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
     </a>
  
     <!-- Facebook -->
-    <a href="http://www.facebook.com/sharer.php?u={{link}}" target="_blank">
+    <a href="http://www.facebook.com/sharer.php?u={{this.url}}" target="_blank">
         <img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
     </a>
     
     <!-- Google+ -->
-    <a href="https://plus.google.com/share?url={{link}}" target="_blank">
+    <a href="https://plus.google.com/share?url={{this.url}}" target="_blank">
         <img src="https://simplesharebuttons.com/images/somacro/google.png" alt="Google" />
     </a>
     <!-- Twitter -->
-    <a href="https://twitter.com/share?url={{link}}" target="_blank">
+    <a href="https://twitter.com/share?url={{this.url}}" target="_blank">
         <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
     </a>
+</div>
     <form action="/perfil" method="POST"><input type="submit" value="Borrar 💔" style="background-color: brown"></form></div>
     {{/each}}
   </div>
