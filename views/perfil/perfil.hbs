@@ -6,9 +6,7 @@
   <a class="editarPerfil" href="/perfil/edit">Editar Perfil</a>
   <p>{{user.bio}}</p>
   <article>
-    <span><b>{{user.canalesNumber}}</b> canales que sigues</span> &nbsp;&nbsp;&nbsp;&nbsp;
-    <span> tus memes: <b>{{user.likes}}</b> </span> <br> <br>
-    <span><b>{{user.upvotes}}</b> likes a tus memes </span>
+    <span> Tienes<b> {{user.likes}}</b> memes </span> <br> <br>
   </article>
   <br>
   <p>Tus memes:</p>
@@ -36,11 +34,39 @@
         <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
     </a>
     </div>
-    <form action="/perfil" method="POST">
-    <button class="uk-button uk-button-primary uk-button-small">Borrar</button>
-    <input type="submit" value="Borrar 💔" style="background-color: brown">
+    <form class="deleteButton" action="/post/delete" method="POST">
+      <input style="display:none;" type="text" name="url" value="{{this}}">
+      <button type="submit" class="uk-button uk-button-primary uk-button-small">Borrar</button>
     </form>
     </div>
     {{/each}}
   </div>
 </div>
+
+
+<script>
+    let forms = document.querySelectorAll('.deleteButton')  
+    for(var i = 0; i < forms.length; i++){
+        forms[i].addEventListener('submit', function(e){
+            e.preventDefault()
+            let url = {value: e.srcElement[0].value}
+            console.log(url)
+            fetch('/post/delete', {method: 'POST', body: JSON.stringify(url), 
+            headers:{
+                'Content-Type': 'application/json'
+            }})
+            .then(function(response) {
+            if(response.ok) {
+              location.reload()
+                return;
+            }
+            throw new Error('Request failed.');
+            })
+            .catch(function(error) {
+            console.log(error);
+            });
+        })
+    }
+        
+    
+</script>
