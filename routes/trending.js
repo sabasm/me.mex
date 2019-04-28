@@ -12,6 +12,4 @@ res.render('index',{posts})
   )
 });
 
-
-
 module.exports=router
